@@ -139,10 +139,10 @@ RUN chown -R logstash:logstash ${LOGSTASH_HOME}/patterns
 
 # geoip
 
-RUN cd /opt/logstash/
- && curl -O "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
+RUN cd /opt/logstash/ \
+ && curl -O "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz" \
  && gunzip GeoLite2-City.mmdb.gz
- 
+
 # Fix permissions
 RUN chmod -R +r /etc/logstash
 
